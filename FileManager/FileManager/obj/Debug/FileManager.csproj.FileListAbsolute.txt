@@ -1,1 +1,11 @@
 c:\users\администратор\documents\visual studio 2013\Projects\FileManager\FileManager\bin\Debug\FileManager.exe.config
+C:\Users\Администратор\Documents\GitHub\FileManager\FileManager\FileManager\bin\Debug\FileManager.exe.config
+C:\Users\Администратор\Documents\GitHub\FileManager\FileManager\FileManager\bin\Debug\FileManager.exe
+C:\Users\Администратор\Documents\GitHub\FileManager\FileManager\FileManager\bin\Debug\FileManager.pdb
+C:\Users\Администратор\Documents\GitHub\FileManager\FileManager\FileManager\obj\Debug\FileManager.csprojResolveAssemblyReference.cache
+C:\Users\Администратор\Documents\GitHub\FileManager\FileManager\FileManager\obj\Debug\FileManager.Form1.resources
+C:\Users\Администратор\Documents\GitHub\FileManager\FileManager\FileManager\obj\Debug\FileManager.Properties.Resources.resources
+C:\Users\Администратор\Documents\GitHub\FileManager\FileManager\FileManager\obj\Debug\FileManager.csproj.GenerateResource.Cache
+C:\Users\Администратор\Documents\GitHub\FileManager\FileManager\FileManager\obj\Debug\FileManager.exe
+C:\Users\Администратор\Documents\GitHub\FileManager\FileManager\FileManager\obj\Debug\FileManager.pdb
+C:\Users\Администратор\Documents\GitHub\FileManager\FileManager\FileManager\obj\Debug\FileManager.LVKontrol.resources
