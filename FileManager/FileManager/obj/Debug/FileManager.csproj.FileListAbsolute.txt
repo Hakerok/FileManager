@@ -1,0 +1,1 @@
+c:\users\администратор\documents\visual studio 2013\Projects\FileManager\FileManager\bin\Debug\FileManager.exe.config
