@@ -34,6 +34,8 @@
             this.Exit = new System.Windows.Forms.Button();
             this.Remove = new System.Windows.Forms.Button();
             this.Copy = new System.Windows.Forms.Button();
+            this.RightKontrol = new FileManager.LvKontrol(this.components);
+            this.LeftKontrol = new FileManager.LvKontrol(this.components);
             this.SuspendLayout();
             // 
             // Replace
@@ -78,11 +80,27 @@
             this.Copy.UseVisualStyleBackColor = true;
             this.Copy.Click += new System.EventHandler(this.Copy_Click);
             // 
+            // RightKontrol
+            // 
+            this.RightKontrol.Location = new System.Drawing.Point(622, 50);
+            this.RightKontrol.Name = "RightKontrol";
+            this.RightKontrol.Size = new System.Drawing.Size(613, 432);
+            this.RightKontrol.TabIndex = 5;
+            // 
+            // LeftKontrol
+            // 
+            this.LeftKontrol.Location = new System.Drawing.Point(12, 50);
+            this.LeftKontrol.Name = "LeftKontrol";
+            this.LeftKontrol.Size = new System.Drawing.Size(604, 453);
+            this.LeftKontrol.TabIndex = 4;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1111, 468);
+            this.ClientSize = new System.Drawing.Size(1237, 526);
+            this.Controls.Add(this.RightKontrol);
+            this.Controls.Add(this.LeftKontrol);
             this.Controls.Add(this.Exit);
             this.Controls.Add(this.Remove);
             this.Controls.Add(this.Replace);
@@ -102,6 +120,8 @@
         private System.Windows.Forms.Button Replace;
         private System.Windows.Forms.Button Remove;
         private System.Windows.Forms.Button Exit;
+        private LvKontrol LeftKontrol;
+        private LvKontrol RightKontrol;
     }
 }
 

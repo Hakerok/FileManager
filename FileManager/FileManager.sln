@@ -5,8 +5,6 @@ VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileManager", "FileManager\FileManager.csproj", "{5D340AD7-0334-4812-8ADE-7E0C0D764055}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Archives", "Archives\Archives.csproj", "{7F44317F-13A1-47F2-A5A4-D2B834F75E8B}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{5D340AD7-0334-4812-8ADE-7E0C0D764055}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D340AD7-0334-4812-8ADE-7E0C0D764055}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D340AD7-0334-4812-8ADE-7E0C0D764055}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7F44317F-13A1-47F2-A5A4-D2B834F75E8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7F44317F-13A1-47F2-A5A4-D2B834F75E8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7F44317F-13A1-47F2-A5A4-D2B834F75E8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7F44317F-13A1-47F2-A5A4-D2B834F75E8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
