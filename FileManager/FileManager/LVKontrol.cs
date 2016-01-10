@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 using FileManager.Archives;
@@ -28,13 +29,22 @@ namespace FileManager
 
                 foreach (var item in _activeFolder.DirectoriesList)
                 {
-                    lsvPanel.Items.Add(item.AbstractName);
-                    
+                    var lvi = new ListViewItem { Text = item.AbstractName };
+                    lvi.SubItems.Add("");
+                    lvi.SubItems.Add("");
+                    lvi.SubItems.Add("");
+                    lvi.SubItems.Add(item.AbstractDateOfCreation);
+                    lsvPanel.Items.Add(lvi);
                 }
 
                 foreach (var item in _activeFolder.FilesList)
                 {
-                    lsvPanel.Items.Add(item.AbstractName);
+                    var lvi = new ListViewItem {Text = item.AbstractName};
+                    lvi.SubItems.Add(item.AbstractSize.ToString(CultureInfo.InvariantCulture));
+                    lvi.SubItems.Add(item.DateOfCreation);
+                    lvi.SubItems.Add(item.DateOfChange);
+                    lvi.SubItems.Add(item.DateOfLastAppeal);
+                    lsvPanel.Items.Add(lvi);
                    
                 }
             }

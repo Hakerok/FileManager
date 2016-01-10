@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.IO.Compression;
 using FileManager.Class;
@@ -18,9 +19,7 @@ namespace FileManager.Archives
 
             AbstractName = entry.Name;
             AbstractSize = entry.CompressedLength;
-            DateOfCreation = "";
-            DateOfChange = "";
-            DateOfLastAppeal = "";
+            DateOfLastAppeal = entry.LastWriteTime.DateTime.ToString(CultureInfo.InvariantCulture);
         }
 
         public override void AbstractCopy(AbstractFile file)
