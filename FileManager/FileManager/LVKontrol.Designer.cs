@@ -30,9 +30,9 @@
             this.components = new System.ComponentModel.Container();
             this.lsvPanel = new System.Windows.Forms.ListView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBack = new System.Windows.Forms.Button();
             this.lbActiveDirectory = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnBack = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,6 +43,7 @@
             this.lsvPanel.Size = new System.Drawing.Size(600, 400);
             this.lsvPanel.TabIndex = 0;
             this.lsvPanel.UseCompatibleStateImageBehavior = false;
+            this.lsvPanel.Click += new System.EventHandler(this.lsvPanel_Click);
             this.lsvPanel.DoubleClick += new System.EventHandler(this.lsvPanel_DoubleClick);
             // 
             // panel1
@@ -56,15 +57,6 @@
             this.panel1.Size = new System.Drawing.Size(200, 100);
             this.panel1.TabIndex = 0;
             // 
-            // lbActiveDirectory
-            // 
-            this.lbActiveDirectory.AutoSize = true;
-            this.lbActiveDirectory.Location = new System.Drawing.Point(30, 0);
-            this.lbActiveDirectory.Name = "lbActiveDirectory";
-            this.lbActiveDirectory.Size = new System.Drawing.Size(87, 13);
-            this.lbActiveDirectory.TabIndex = 0;
-            this.lbActiveDirectory.Text = "lbActiveDirectory";
-            // 
             // btnBack
             // 
             this.btnBack.BackgroundImage = global::FileManager.Properties.Resources.back;
@@ -75,6 +67,15 @@
             this.btnBack.TabIndex = 0;
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // lbActiveDirectory
+            // 
+            this.lbActiveDirectory.AutoSize = true;
+            this.lbActiveDirectory.Location = new System.Drawing.Point(30, 0);
+            this.lbActiveDirectory.Name = "lbActiveDirectory";
+            this.lbActiveDirectory.Size = new System.Drawing.Size(87, 13);
+            this.lbActiveDirectory.TabIndex = 0;
+            this.lbActiveDirectory.Text = "lbActiveDirectory";
             // 
             // LvKontrol
             // 

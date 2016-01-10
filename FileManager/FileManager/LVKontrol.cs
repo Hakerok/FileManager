@@ -11,8 +11,8 @@ namespace FileManager
     public partial class LvKontrol : Panel
     {
         AbstractFolder _activeFolder;
-
-        protected AbstractFolder ActiveDirectory
+        public string ClickItem;
+        public AbstractFolder ActiveDirectory
         {
             get
             {
@@ -79,10 +79,12 @@ namespace FileManager
                 return;
 
             var clickedItem = lsvPanel.Items[lsvPanel.SelectedIndices[0]].SubItems[0].Text;
+           
 
             foreach (var item in ActiveDirectory.DirectoriesList.Where(item => item.AbstractName == clickedItem))
             {
                 ActiveDirectory = item;
+               
                 break;
             }
 
@@ -135,8 +137,11 @@ namespace FileManager
             }
         }
 
-       
-       
+        private void lsvPanel_Click(object sender, EventArgs e)
+        {
+            ClickItem = lsvPanel.Items[lsvPanel.SelectedIndices[0]].SubItems[0].Text;
         }
+        }
+       
     }
 
