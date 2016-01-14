@@ -32,6 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnBack = new System.Windows.Forms.Button();
             this.lbActiveDirectory = new System.Windows.Forms.Label();
+            this.cmbDrives = new System.Windows.Forms.ComboBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -51,6 +52,7 @@
             this.panel1.Controls.Add(this.btnBack);
             this.panel1.Controls.Add(this.lsvPanel);
             this.panel1.Controls.Add(this.lbActiveDirectory);
+            this.panel1.Controls.Add(this.cmbDrives);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -77,6 +79,15 @@
             this.lbActiveDirectory.TabIndex = 0;
             this.lbActiveDirectory.Text = "lbActiveDirectory";
             // 
+            // cmbDrives
+            // 
+            this.cmbDrives.FormattingEnabled = true;
+            this.cmbDrives.Location = new System.Drawing.Point(200, 0);
+            this.cmbDrives.Name = "cmbDrives";
+            this.cmbDrives.Size = new System.Drawing.Size(121, 21);
+            this.cmbDrives.TabIndex = 0;
+            this.cmbDrives.SelectedValueChanged += new System.EventHandler(this.cmbDrives_SelectedValueChanged);
+            // 
             // LvKontrol
             // 
             this.Controls.Add(this.panel1);
@@ -93,5 +104,6 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label lbActiveDirectory;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.ComboBox cmbDrives;
     }
 }

@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using FileManager.Class;
+using System.Collections.Generic;
 using System.IO.Compression;
 using System.Linq;
-using FileManager.Class;
 
-namespace FileManager.Archives
+
+namespace FileManager.Class
 {
     public class ArchiveFolder : AbstractFolder
     {
@@ -32,8 +33,8 @@ namespace FileManager.Archives
             DirectoriesList.Clear();
             FilesList.Clear();
 
-            var arc = ZipFile.Open(AbstractPath, ZipArchiveMode.Update);
-           
+            using (var arc = ZipFile.Open(AbstractPath,ZipArchiveMode.Update))
+            {
                 var existingFolders = new List<string>();
 
                 foreach (var item in arc.Entries)
@@ -42,14 +43,13 @@ namespace FileManager.Archives
                     {
                         if (InnerPath == "")
                         {
-                            if (
-                                existingFolders.Contains(item.FullName.Substring(0,
-                                    item.FullName.IndexOf(@"/", System.StringComparison.Ordinal) + 1)) ||
-                                item.FullName.Substring(0,
-                                    item.FullName.IndexOf(@"/", System.StringComparison.Ordinal) + 1) == "") continue;
-                            var newFolder = new ArchiveFolder(AbstractPath, item.FullName.Substring(0, item.FullName.IndexOf(@"/", System.StringComparison.Ordinal) + 1));
-                            DirectoriesList.Add(newFolder);
-                            existingFolders.Add(item.FullName.Substring(0, item.FullName.IndexOf(@"/", System.StringComparison.Ordinal) + 1));
+                            if (!existingFolders.Contains(item.FullName.Substring(0, item.FullName.IndexOf(@"/", System.StringComparison.Ordinal) + 1)) &&
+                                item.FullName.Substring(0, item.FullName.IndexOf(@"/", System.StringComparison.Ordinal) + 1) != "")
+                            {
+                                var newFolder = new ArchiveFolder(AbstractPath, item.FullName.Substring(0, item.FullName.IndexOf(@"/", System.StringComparison.Ordinal) + 1));
+                                DirectoriesList.Add(newFolder);
+                                existingFolders.Add(item.FullName.Substring(0, item.FullName.IndexOf(@"/", System.StringComparison.Ordinal) + 1));
+                            }
                         }
                         else
                         {
@@ -92,7 +92,7 @@ namespace FileManager.Archives
                 }
 
             }
-
+        }
 
         public override void AbstractRemove()
         {

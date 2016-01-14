@@ -26,6 +26,8 @@ namespace FileManager.Class
         public string AbstractName { get; set; }
         public string AbstractPath { get; set; }
         public string AbstractDateOfCreation { get; set; }
+        public string DateOfChange { get; set; }
+        public string DateOfLastAppeal { get; set; }
         public List<AbstractFile> FilesList { get; set; }
         public List<AbstractFolder> DirectoriesList { get; set; }
 

@@ -39,6 +39,7 @@
             this.CopyRight = new System.Windows.Forms.Button();
             this.ReplaceRight = new System.Windows.Forms.Button();
             this.RemoveRight = new System.Windows.Forms.Button();
+            this.pgsCopy = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // ReplaceLeft
@@ -84,19 +85,17 @@
             this.CopyLeft.Click += new System.EventHandler(this.Copy_Click);
             // 
             // RightKontrol
-            // 
-            
+            //             
             this.RightKontrol.Location = new System.Drawing.Point(622, 50);
             this.RightKontrol.Name = "RightKontrol";
             this.RightKontrol.Size = new System.Drawing.Size(613, 432);
             this.RightKontrol.TabIndex = 5;
             // 
             // LeftKontrol
-            // 
-           
+            //            
             this.LeftKontrol.Location = new System.Drawing.Point(12, 50);
             this.LeftKontrol.Name = "LeftKontrol";
-            this.LeftKontrol.Size = new System.Drawing.Size(604, 453);
+            this.LeftKontrol.Size = new System.Drawing.Size(604, 432);
             this.LeftKontrol.TabIndex = 4;
             // 
             // CopyRight
@@ -130,11 +129,19 @@
             this.RemoveRight.UseVisualStyleBackColor = true;
             this.RemoveRight.Click += new System.EventHandler(this.RemoveRight_Click);
             // 
+            // pgsCopy
+            // 
+            this.pgsCopy.Location = new System.Drawing.Point(13, 489);
+            this.pgsCopy.Name = "pgsCopy";
+            this.pgsCopy.Size = new System.Drawing.Size(274, 23);
+            this.pgsCopy.TabIndex = 9;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1237, 526);
+            this.Controls.Add(this.pgsCopy);
             this.Controls.Add(this.RemoveRight);
             this.Controls.Add(this.ReplaceRight);
             this.Controls.Add(this.CopyRight);
@@ -164,6 +171,7 @@
         private System.Windows.Forms.Button CopyRight;
         private System.Windows.Forms.Button ReplaceRight;
         private System.Windows.Forms.Button RemoveRight;
+        private System.Windows.Forms.ProgressBar pgsCopy;
     }
 }
 

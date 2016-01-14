@@ -5,7 +5,7 @@ using FileManager.Class;
 namespace FileManager
 {
     public partial class Form1 : Form
-    {
+    {        
         public Form1()
         {
             InitializeComponent();
@@ -42,38 +42,48 @@ namespace FileManager
 
         private void Copy_Click(object sender, EventArgs e)
         {
-            foreach (var item1 in from item in LeftKontrol.ActiveDirectory.DirectoriesList.Where(item => item.AbstractName == LeftKontrol.ClickItem)
-                                  let qwe = new Folder(RightKontrol.ActiveDirectory.AbstractPath + @"\" + item.AbstractName)
-                                  from item1 in item.AbstractCopy(qwe)
-                                  select item1)
+            foreach (var item in LeftKontrol.ActiveDirectory.DirectoriesList.Where(item => item.AbstractName == LeftKontrol.ClickItem))
             {
-                // ReSharper disable once ReturnValueOfPureMethodIsNotUsed
-                item1.ToString();
+                AbstractFolder CopiedItem = new Folder(RightKontrol.ActiveDirectory.AbstractPath + @"\" + LeftKontrol.ClickItem);
+                foreach (var progressInfo in item.AbstractCopy(CopiedItem))
+                {
+                    pgsCopy.Maximum = progressInfo.All;
+                    pgsCopy.Value = progressInfo.Current;                    
+                }
+                break;
             }
             foreach (var item in LeftKontrol.ActiveDirectory.FilesList.Where(item => item.AbstractName == LeftKontrol.ClickItem))
             {
-                AbstractFile qwe = new File(RightKontrol.ActiveDirectory.AbstractPath + @"\" + item.AbstractName);
-                item.AbstractCopy(qwe);
+                AbstractFile CopiedItem = new File(RightKontrol.ActiveDirectory.AbstractPath + @"\" + LeftKontrol.ClickItem);
+                item.AbstractCopy(CopiedItem);
+                break;
             }
+
             KontrolsUpdates();
+            pgsCopy.Value = 0;
         }
 
         private void CopyRight_Click(object sender, EventArgs e)
         {
-            foreach (var item1 in from item in RightKontrol.ActiveDirectory.DirectoriesList.Where(item => item.AbstractName == RightKontrol.ClickItem)
-                                  let copyToFolder = new Folder(LeftKontrol.ActiveDirectory.AbstractPath + @"\" + item.AbstractName)
-                                  from item1 in item.AbstractCopy(copyToFolder)
-                                  select item1)
+            foreach (var item in RightKontrol.ActiveDirectory.DirectoriesList.Where(item => item.AbstractName == RightKontrol.ClickItem))
             {
-                // ReSharper disable once ReturnValueOfPureMethodIsNotUsed
-                item1.ToString();
+                AbstractFolder CopiedItem = new Folder(LeftKontrol.ActiveDirectory.AbstractPath + @"\" + RightKontrol.ClickItem);
+                foreach (var progressInfo in item.AbstractCopy(CopiedItem))
+                {
+                    pgsCopy.Maximum = progressInfo.All;
+                    pgsCopy.Value = progressInfo.Current;
+                }
+                break;
             }
             foreach (var item in RightKontrol.ActiveDirectory.FilesList.Where(item => item.AbstractName == RightKontrol.ClickItem))
             {
-                AbstractFile copyToFile = new File(LeftKontrol.ActiveDirectory.AbstractPath + @"\" + item.AbstractName);
-                item.AbstractCopy(copyToFile);
+                AbstractFile CopiedItem = new File(LeftKontrol.ActiveDirectory.AbstractPath + @"\" + RightKontrol.ClickItem);
+                item.AbstractCopy(CopiedItem);
+                break;
             }
+
             KontrolsUpdates();
+            pgsCopy.Value = 0;
         }
 
         private void Replace_Click(object sender, EventArgs e)
@@ -108,21 +118,28 @@ namespace FileManager
 
         private void Remove_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Вы действительно хотите удалить", "Удалить", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                return;
 
             foreach (var item in LeftKontrol.ActiveDirectory.DirectoriesList.Where(item => item.AbstractName == LeftKontrol.ClickItem))
             {
                 item.AbstractRemove();
+                break;
             }
             foreach (var item in LeftKontrol.ActiveDirectory.FilesList.Where(item => item.AbstractName == LeftKontrol.ClickItem))
             {
                 item.AbstractRemove();
+                break;
             }
             KontrolsUpdates();
          }
 
         private void RemoveRight_Click(object sender, EventArgs e)
         {
-             foreach (var item in RightKontrol.ActiveDirectory.DirectoriesList.Where(item => item.AbstractName == RightKontrol.ClickItem))
+            if (MessageBox.Show("Вы действительно хотите удалить", "Удалить", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                return;
+
+            foreach (var item in RightKontrol.ActiveDirectory.DirectoriesList.Where(item => item.AbstractName == RightKontrol.ClickItem))
             {
                 item.AbstractRemove();
             }
@@ -146,11 +163,6 @@ namespace FileManager
         {
             LeftKontrol.ActiveDirectory = new Folder(LeftKontrol.ActiveDirectory.AbstractPath);
             RightKontrol.ActiveDirectory = new Folder(RightKontrol.ActiveDirectory.AbstractPath);
-        }
-
-
-
-
-
+        }    
     }
 }

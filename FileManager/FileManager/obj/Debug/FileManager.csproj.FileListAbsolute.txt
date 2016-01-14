@@ -19,3 +19,13 @@ C:\Users\Александр\Desktop\FileManager-master\FileManager\FileManager\o
 C:\Users\Александр\Desktop\FileManager-master\FileManager\FileManager\obj\Debug\FileManager.LVKontrol.resources
 C:\Users\Александр\Desktop\FileManager-master\FileManager\FileManager\obj\Debug\FileManager.Properties.Resources.resources
 C:\Users\Александр\Desktop\FileManager-master\FileManager\FileManager\obj\Debug\FileManager.csproj.GenerateResource.Cache
+C:\Users\Администратор\Desktop\FileManager-master\FileManager\FileManager\bin\Debug\FileManager.exe.config
+C:\Users\Администратор\Desktop\FileManager-master\FileManager\FileManager\obj\Debug\FileManager.exe
+C:\Users\Администратор\Desktop\FileManager-master\FileManager\FileManager\obj\Debug\FileManager.pdb
+C:\Users\Администратор\Desktop\FileManager-master\FileManager\FileManager\bin\Debug\FileManager.exe
+C:\Users\Администратор\Desktop\FileManager-master\FileManager\FileManager\bin\Debug\FileManager.pdb
+C:\Users\Администратор\Desktop\FileManager-master\FileManager\FileManager\obj\Debug\FileManager.csprojResolveAssemblyReference.cache
+C:\Users\Администратор\Desktop\FileManager-master\FileManager\FileManager\obj\Debug\FileManager.Form1.resources
+C:\Users\Администратор\Desktop\FileManager-master\FileManager\FileManager\obj\Debug\FileManager.LvKontrol.resources
+C:\Users\Администратор\Desktop\FileManager-master\FileManager\FileManager\obj\Debug\FileManager.Properties.Resources.resources
+C:\Users\Администратор\Desktop\FileManager-master\FileManager\FileManager\obj\Debug\FileManager.csproj.GenerateResource.Cache

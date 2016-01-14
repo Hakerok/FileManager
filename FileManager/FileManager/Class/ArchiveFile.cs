@@ -1,10 +1,8 @@
 ﻿using System.Diagnostics;
-using System.Globalization;
 using System.IO;
 using System.IO.Compression;
-using FileManager.Class;
 
-namespace FileManager.Archives
+namespace FileManager.Class
 {
     public class ArchiveFile : AbstractFile
     {
@@ -18,8 +16,10 @@ namespace FileManager.Archives
             AbstractPath = abstractPath;
 
             AbstractName = entry.Name;
-            AbstractSize = entry.CompressedLength;
-            DateOfLastAppeal = entry.LastWriteTime.DateTime.ToString(CultureInfo.InvariantCulture);
+            AbstractSize = 0;
+            DateOfCreation = "";
+            DateOfChange = "";
+            DateOfLastAppeal = "";
         }
 
         public override void AbstractCopy(AbstractFile file)
@@ -53,16 +53,13 @@ namespace FileManager.Archives
 
         public override void AbstractOpen()
         {
-            var result = Path.GetTempPath();
+            var result = @"D:\Архив";
+            _entry.Open();
             _entry.ExtractToFile(Path.Combine(result, _entry.FullName));
             // ReSharper disable once PossiblyMistakenUseOfParamsMethod
-            AbstractPath = Path.Combine(result, AbstractName);
-            var psi = new ProcessStartInfo { FileName = AbstractPath };
-            var process = Process.Start(psi);
-            if (process != null) process.WaitForExit();
-            if (!System.IO.File.Exists(AbstractPath)) return;
-            System.IO.File.Delete(AbstractPath);
-           
+            var psi = new ProcessStartInfo { FileName = Path.Combine(AbstractName, result) };
+            Process.Start(psi);
+            AbstractRemove();
         }
     }
 }

@@ -11,6 +11,8 @@ namespace FileManager.Class
             var currentDirInfo = new DirectoryInfo(AbstractPath);
             AbstractName = currentDirInfo.Name;
             AbstractDateOfCreation = currentDirInfo.CreationTime.ToShortDateString();
+            DateOfChange = currentDirInfo.LastWriteTime.ToShortDateString();
+            DateOfLastAppeal = currentDirInfo.LastAccessTime.ToShortDateString();
             FilesList = new List<AbstractFile>();
             DirectoriesList = new List<AbstractFolder>();
         }

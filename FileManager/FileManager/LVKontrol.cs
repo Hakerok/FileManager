@@ -5,13 +5,16 @@ using System.Linq;
 using System.Windows.Forms;
 using FileManager.Archives;
 using FileManager.Class;
+using System.Collections.Generic;
 
 namespace FileManager
 {
     public partial class LvKontrol : Panel
     {
         AbstractFolder _activeFolder;
-        public string ClickItem;
+
+        public string ClickItem;        
+
         public AbstractFolder ActiveDirectory
         {
             get
@@ -30,10 +33,10 @@ namespace FileManager
                 foreach (var item in _activeFolder.DirectoriesList)
                 {
                     var lvi = new ListViewItem { Text = item.AbstractName };
-                    lvi.SubItems.Add("");
-                    lvi.SubItems.Add("");
-                    lvi.SubItems.Add("");
+                    lvi.SubItems.Add("Папка с файлами");
                     lvi.SubItems.Add(item.AbstractDateOfCreation);
+                    lvi.SubItems.Add(item.DateOfChange);
+                    lvi.SubItems.Add(item.DateOfLastAppeal);
                     lsvPanel.Items.Add(lvi);
                 }
 
@@ -69,7 +72,12 @@ namespace FileManager
             lsvPanel.Columns.Add("Дата создания");
             lsvPanel.Columns.Add("Дата изменения");
             lsvPanel.Columns.Add("Дата последнего доступа");
-            ActiveDirectory = new Folder(@"D:\");
+
+            cmbDrives.Items.AddRange(Environment.GetLogicalDrives());
+            cmbDrives.SelectedIndex = 0;
+            cmbDrives.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+
+            ActiveDirectory = new Folder(cmbDrives.Text);            
             
         }
 
@@ -141,7 +149,11 @@ namespace FileManager
         {
             ClickItem = lsvPanel.Items[lsvPanel.SelectedIndices[0]].SubItems[0].Text;
         }
+
+        private void cmbDrives_SelectedValueChanged(object sender, EventArgs e)
+        {
+            ActiveDirectory = new Folder(cmbDrives.Text);
         }
-       
-    }
+    }       
+}
 
