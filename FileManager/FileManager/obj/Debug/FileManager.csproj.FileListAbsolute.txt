@@ -29,3 +29,13 @@ C:\Users\Администратор\Desktop\FileManager-master\FileManager\FileM
 C:\Users\Администратор\Desktop\FileManager-master\FileManager\FileManager\obj\Debug\FileManager.LvKontrol.resources
 C:\Users\Администратор\Desktop\FileManager-master\FileManager\FileManager\obj\Debug\FileManager.Properties.Resources.resources
 C:\Users\Администратор\Desktop\FileManager-master\FileManager\FileManager\obj\Debug\FileManager.csproj.GenerateResource.Cache
+C:\Users\Игорь\Documents\GitHub\File_Manager\FileManager\FileManager\bin\Debug\FileManager.exe.config
+C:\Users\Игорь\Documents\GitHub\File_Manager\FileManager\FileManager\obj\Debug\FileManager.exe
+C:\Users\Игорь\Documents\GitHub\File_Manager\FileManager\FileManager\obj\Debug\FileManager.pdb
+C:\Users\Игорь\Documents\GitHub\File_Manager\FileManager\FileManager\bin\Debug\FileManager.exe
+C:\Users\Игорь\Documents\GitHub\File_Manager\FileManager\FileManager\bin\Debug\FileManager.pdb
+C:\Users\Игорь\Documents\GitHub\File_Manager\FileManager\FileManager\obj\Debug\FileManager.csprojResolveAssemblyReference.cache
+C:\Users\Игорь\Documents\GitHub\File_Manager\FileManager\FileManager\obj\Debug\FileManager.Form1.resources
+C:\Users\Игорь\Documents\GitHub\File_Manager\FileManager\FileManager\obj\Debug\FileManager.LvKontrol.resources
+C:\Users\Игорь\Documents\GitHub\File_Manager\FileManager\FileManager\obj\Debug\FileManager.Properties.Resources.resources
+C:\Users\Игорь\Documents\GitHub\File_Manager\FileManager\FileManager\obj\Debug\FileManager.csproj.GenerateResource.Cache

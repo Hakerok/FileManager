@@ -9,28 +9,45 @@ namespace FileManager
         public Form1()
         {
             InitializeComponent();
-            toolTip1.SetToolTip(CopyLeft, "Копировать (F3)");
-            toolTip1.SetToolTip(ReplaceLeft, "Переместить (F4)");
-            toolTip1.SetToolTip(RemoveLeft, "Удалить (Delete)");
+            toolTip1.SetToolTip(CopyLeft, "Копировать (Alt + Стрелка вправо)");
+            toolTip1.SetToolTip(ReplaceLeft, "Переместить (Ctrl + Стрелка вправо)");
+            toolTip1.SetToolTip(RemoveLeft, "Удалить (Ctrl + Delete)");
+            toolTip1.SetToolTip(CopyRight, "Копировать (Alt + Стрелка влево)");
+            toolTip1.SetToolTip(ReplaceRight, "Переместить (Ctrl + Стрелка влево)");
+            toolTip1.SetToolTip(RemoveRight, "Удалить (Alt + Delete)");
             toolTip1.SetToolTip(Exit, "Выход (Alt+X)");
             KeyPreview = true;
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.F3)
+            if (e.KeyCode == Keys.Right && e.Alt)
             {
                 CopyLeft.PerformClick();
             }
 
-            if (e.KeyCode == Keys.F4)
+            if (e.KeyCode == Keys.Left && e.Alt)
+            {
+                CopyRight.PerformClick();
+            }
+
+            if (e.KeyCode == Keys.Right && e.Control)
             {
                ReplaceLeft.PerformClick();
             }
 
-            if (e.KeyCode == Keys.Delete)
+            if (e.KeyCode == Keys.Left && e.Alt)
+            {
+                ReplaceRight.PerformClick();
+            }
+
+            if (e.KeyCode == Keys.Delete && e.Control)
             {
                 RemoveLeft.PerformClick();
+            }
+            if (e.KeyCode == Keys.Delete && e.Alt)
+            {
+                RemoveRight.PerformClick();
             }
 
             if (e.KeyCode == Keys.X && e.Alt)
